@@ -1,0 +1,34 @@
+.searchBox {
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: rgb(240,240,240);
+    border-radius: 5px;
+    
+    &__icon {
+        color: grey;
+        position: absolute;        
+    }
+    &__input {
+        width: 300px;
+        padding: 5px 10px;
+        background-color: transparent;
+        text-align: center;
+        &:focus {
+            border: 1px solid rgba(0,0,0,.2);
+            border-radius: 5px;
+        }
+        
+    }
+    .icon__search {
+        left: 50px;
+    }
+    .input__clear {
+        // display: none;
+        width: 15px;
+        height: 15px;
+        right: 10px;
+    }
+
+}

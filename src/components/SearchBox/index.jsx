@@ -1,9 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { Context } from '../../App';
 
 function SearchBox() {
-  const [search, setSearch] = React.useState('');
+  const { search, setSearch } = React.useContext(Context);
   const inputRef = React.useRef();
 
   const onChangeInput = (event) => {

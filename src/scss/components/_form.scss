@@ -1,0 +1,45 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    &__date {
+        text-align: center;
+        margin-bottom: 20px;
+        
+    }
+    &__title {
+        margin-bottom: 20px;
+        border: 1px solid rgba(0,0,0,.1);
+        border-radius: 5px;
+        padding: 10px 20px;
+        background-color: transparent;
+        font-family: $roboto;
+        font-size: 16px;
+        font-weight: 500;
+        color: $greyText;
+        box-sizing: border-box;
+        line-height: 1.5;
+        &::placeholder {
+            font-weight: 400;
+        }
+        
+    }
+    &__text {
+        border: 1px solid rgba(0,0,0,.1);
+        border-radius: 5px;
+        background-color: transparent;
+        resize: none;
+        height: 200px;
+        padding: 10px 20px;
+        font-family: $roboto;
+        font-size: 16px;
+        color: $greyText;
+        line-height: 1.5;
+        box-sizing: border-box;
+    }
+    .blockButtons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

@@ -1,10 +1,11 @@
 .app {
-  max-width: 1200px;  
+  max-width: 960px;  
   background-color: $backgroundApp;
   font-family: $roboto;  
   border-radius: 5px;
   overflow: hidden;
-  margin: 60px auto;
+  margin: 0 auto;
   box-shadow: 2px 2px 5px rgba(0,0,0, .2);
-  color: #696967;
+  color: $greyText;
+  line-height: 1.5;
 }

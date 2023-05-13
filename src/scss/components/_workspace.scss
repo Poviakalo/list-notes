@@ -1,7 +1,7 @@
 .workspace {
-    padding: 20px;
     // overflow-y: scroll;
-    flex: 3;
+    padding: 20px;
+    flex: 2;
     line-height: 1.5;
     &::-webkit-scrollbar {
         width: 10px;
@@ -15,8 +15,16 @@
 
     &__date {
         text-align: center;
+        margin-bottom: 20px;        
     }
-    // &__title {
-
-    // }
+    &__title {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        font-weight: 500;
+    }
+    &__text {
+        padding: 10px 20px;
+        border: 1px solid transparent;
+    }
 }

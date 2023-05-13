@@ -1,13 +1,26 @@
-import React from 'react'
+import React from 'react';
+import { Context } from '../../App';
+import Form from '../Form';
 
 function Workspace() {
+  const { activeItem, edit } = React.useContext(Context);
+
+  
   return (
-    <div className='workspace'>
-      <div className='workspace__date'>May 10, 2018 at 12:17 PM</div>
-      <h1 className='workspace__title'>title</h1>
-      <p className='workspace__text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, accusamus? Voluptate eos error reiciendis accusantium delectus sequi, veniam, deleniti quod qui corporis eligendi saepe, nihil itaque ratione maxime mollitia dicta.</p>
-    </div>
-  )
+      <div className='workspace'>  
+        {
+          Object.keys(activeItem).length === 0 ? null : (
+          edit 
+          ? <Form />
+          : <>
+              <div className='workspace__date'>{activeItem.date}</div>
+              <h1 className='workspace__title'>{activeItem.title}</h1>
+              <p className='workspace__text'>{activeItem.text}</p>
+            </>
+          )
+        }        
+      </div>
+    )  
 }
 
 export default Workspace;

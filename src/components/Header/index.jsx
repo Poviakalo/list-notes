@@ -1,28 +1,32 @@
 import React from 'react';
 import '../../scss/main.scss';
 import SearchBox from '../SearchBox';
-import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { Context } from '../../App';
 
-function Header() {
-    const buttons = [
-        {name: 'add', icon: faPlus}, 
-        {name: 'delete', icon: faTrashCan}, 
-        {name: 'edit', icon: faPenToSquare}
-    ];
+
+function Header({onRemove, onAddList, onEditListItem}) {    
+    const { activeItem, edit } = React.useContext(Context);
+    
+    const editItem = () => {      
+      onEditListItem()
+    }
+
+    const removeItem = () => {
+      if(window.confirm(`Ви дійсно бажаєте видалити нотатку ${activeItem.title}?`)) {
+        onRemove();
+      }
+    }
+
   return (
     <div className='header'>
-        {/* <div className="wrapper header__wrapper"> */}
-            <div className="actions">
-                {
-                    buttons.map( ({name, icon}) => <Button key={name} name={name}>
-                        <FontAwesomeIcon icon={icon} />
-                    </Button>)
-                }
-            </div>
-            <SearchBox />
-        {/* </div> */}
+        <div className="actions">
+          <button className='button' onClick={ () => onAddList() }><FontAwesomeIcon icon={faPlus} /></button>
+          <button className='button' onClick={ removeItem } disabled={Object.keys(activeItem).length === 0 || edit}><FontAwesomeIcon icon={faTrashCan} /></button>
+          <button className='button' onClick={ editItem } disabled={Object.keys(activeItem).length === 0}><FontAwesomeIcon icon={faPenToSquare} /></button>
+        </div>
+        <SearchBox />        
     </div>
   )
 }

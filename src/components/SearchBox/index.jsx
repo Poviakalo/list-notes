@@ -4,12 +4,12 @@ import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Context } from '../../App';
 
 function SearchBox() {
-  const { search, setSearch } = React.useContext(Context);
+  const { search, setSearch, setActiveItem } = React.useContext(Context);
   const inputRef = React.useRef();
 
   const onChangeInput = (event) => {
-
-    setSearch(event.target.value);    
+    setSearch(event.target.value);  
+    setActiveItem({});  
   }
 
   const onClickClear = () => {

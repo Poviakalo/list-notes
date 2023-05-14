@@ -29,17 +29,12 @@
         border-radius: 5px;
         background-color: transparent;
         resize: none;
-        height: 200px;
+        height: 350px;
         padding: 10px 20px;
         font-family: $roboto;
         font-size: 16px;
         color: $greyText;
         line-height: 1.5;
         box-sizing: border-box;
-    }
-    .blockButtons {
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-evenly;
-    }
+    }    
 }

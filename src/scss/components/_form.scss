@@ -4,8 +4,7 @@
     line-height: 1.5;
     &__date {
         text-align: center;
-        margin-bottom: 20px;
-        
+        margin-bottom: 20px;        
     }
     &__title {
         margin-bottom: 20px;
@@ -22,6 +21,9 @@
         &::placeholder {
             font-weight: 400;
         }
+        @media(max-width: $tablet) {
+            padding: 10px;
+        }
         
     }
     &__text {
@@ -36,5 +38,15 @@
         color: $greyText;
         line-height: 1.5;
         box-sizing: border-box;
+        @media(max-width: $tablet) {
+            height: calc(100vh - 146px);
+            padding: 10px;
+        }
+        @media(max-width: $phone) {
+            
+        }
     }    
+    @media(max-width: $tablet) {
+        padding: 0 10px;
+    }
 }

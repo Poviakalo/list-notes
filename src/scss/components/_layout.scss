@@ -1,4 +1,15 @@
 .layout {
     height: 500px;
-    display: flex;   
+    display: flex;  
+    // position: fixed;
+    top: 60px; 
+    @media( max-width: $tablet) {
+        height: 100vh;
+
+    }
+    @media( max-width: $phone) {
+      display: block;
+      position: relative;
+      top: 60px;
+    }
 }

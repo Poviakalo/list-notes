@@ -1,0 +1,9 @@
+.actions {
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    @media(max-width: $phone) {
+        width: 150px;
+        justify-content: space-between;
+    }    
+}

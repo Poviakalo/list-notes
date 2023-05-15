@@ -6,4 +6,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media( max-width: $tablet) {
+        
+      }
+    @media( max-width: $phone) {
+        min-width: 345px;
+        position: fixed;
+        z-index: 5;
+      }
 }

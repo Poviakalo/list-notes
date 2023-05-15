@@ -1,13 +1,15 @@
 import React from 'react';
+import classNames from 'classnames';
+
 import { Context } from '../../App';
 import Form from '../Form';
 
 function Workspace() {
-  const { activeItem, edit } = React.useContext(Context);
+  const { activeItem, edit, checked } = React.useContext(Context);
   const { date } = activeItem;
   
   return (
-      <div className='workspace'>  
+      <div className={classNames('workspace',{'workspace__show': checked})}>  
         {
           Object.keys(activeItem).length === 0 ? null : (
           edit 

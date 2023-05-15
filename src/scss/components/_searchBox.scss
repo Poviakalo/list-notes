@@ -1,5 +1,4 @@
-.searchBox {
-    
+.searchBox {    
     position: relative;
     display: flex;
     align-items: center;
@@ -15,20 +14,31 @@
         padding: 5px 10px;
         background-color: transparent;
         text-align: center;
-        &:focus {
+        &:focus {                     
             border: 1px solid rgba(0,0,0,.2);
             border-radius: 5px;
         }
-        
+        @media( max-width: $tablet) {
+            width: 200px;
+        }
+        @media( max-width: $phone) {
+            width: 140px;
+        }        
     }
     .icon__search {
         left: 50px;
+        @media( max-width: $tablet) {
+            left: 30px;
+        }
+        @media( max-width: $phone) {
+            left: 10px;
+        }
     }
     .input__clear {
-        // display: none;
         width: 15px;
         height: 15px;
         right: 10px;
     }
+    
 
 }

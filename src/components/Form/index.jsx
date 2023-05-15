@@ -3,7 +3,8 @@ import classNames from 'classnames';
 import { Context } from '../../App';
 
 function Form({ className }) {  
-  const { activeItem, setActiveItem, list, setList } = React.useContext(Context);
+  const { activeItem, setActiveItem, list, setList, btn, setEdit } = React.useContext(Context);
+
   
   //functions
   const createDate = () => {
@@ -33,7 +34,6 @@ function Form({ className }) {
   const toUpdateList = (arr, item) => {
     const newList = arr.map(obj => {
       if(obj.id === item.id) {
-        console.log('item', item)
         return item;
       }
       return obj;
@@ -42,13 +42,12 @@ function Form({ className }) {
   }
 
   //useRef
-  const formRef = React.useRef()
-  
+  const formRef = React.useRef();
+
   //useEffect
   React.useEffect(() => {
-    const hideFormOutSide = (event) => {
-      // console.log(event.composedPath().includes(formRef.current)? 'попав':'мимо');
-      // setEdit(event.composedPath().includes(formRef.current));
+    const hideFormOutSide = (event) => {      
+      setEdit(event.composedPath().includes(btn.current) || event.composedPath().includes(formRef.current));
     }  
     document.body.addEventListener('click', hideFormOutSide);
     return () => {

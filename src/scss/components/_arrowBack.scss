@@ -1,0 +1,51 @@
+// .arrowBack {
+//     display: none;
+//     &__label {
+//         cursor: pointer;
+    
+//         &:hover {
+//             opacity: 0.7;
+//         }
+//     }
+//     .circle {
+//         width: 100px;height: 100px;border-radius: 50%;
+//         background-color: red;
+//         display: none;
+//     }
+//     &__input {
+//         display: none;
+//         &:checked {
+//             + .circle {
+//                 background-color: green;
+//                 display: block;
+//             }
+//         }
+//     }
+
+//     @media(max-width: $phone) {
+//         display: block;
+//     }
+// }
+
+.actions__label {
+    cursor: pointer;
+    display: none;
+
+    &:hover {
+        opacity: 0.7;
+    }
+    @media(max-width: $phone) {
+        display: block;
+    }
+}
+
+.actions__input {
+    display: none;
+    &:checked {
+        + .button__add {
+            @media(max-width: $phone) {
+                display: none;
+            }
+        }
+    }
+}

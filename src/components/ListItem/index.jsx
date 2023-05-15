@@ -3,14 +3,15 @@ import classNames from 'classnames';
 import { Context } from '../../App';
 
 function ListItem({title, activeItem, date, text, selectItem, item}) {
-  const { setEdit } = React.useContext(Context);
+  const { setEdit, setChecked } = React.useContext(Context);
 
   const itemText  = text.slice(0, 14);
   const itemTitle  = title.slice(0, 25);
   
   const chooseItem = ( obj) => {
     selectItem(obj);
-    setEdit(false)
+    setEdit(false);
+    setChecked(true);
   }
   return (
     <>

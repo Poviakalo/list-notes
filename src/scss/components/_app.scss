@@ -8,4 +8,10 @@
   box-shadow: 2px 2px 5px rgba(0,0,0, .2);
   color: $greyText;
   line-height: 1.5;
+  position: relative;
+
+  @media( max-width: $tablet) {
+    border-radius: 0;
+  }
+
 }

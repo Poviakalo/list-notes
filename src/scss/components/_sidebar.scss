@@ -1,5 +1,4 @@
-.sideBar {  
-    height: 100%;
+.sidebar {  
     overflow-y: scroll;
     flex: 1;
 
@@ -14,6 +13,17 @@
         border-radius: 4px;
         border: 1px solid #fff;
         background-clip: content-box;
+    }
+    @media( max-width: $tablet) {
+        flex: 3;
+    }
+    @media( max-width: $phone) {
+        height: 100vh;
+    }
+    &__hide {
+        @media(max-width: $phone) {
+            display: none;
+        }
     }
 }
 

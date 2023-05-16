@@ -4,7 +4,8 @@
     line-height: 1.5;
     &__date {
         text-align: center;
-        margin-bottom: 20px;        
+        margin-bottom: 20px;   
+        font-weight: 400;     
     }
     &__title {
         margin-bottom: 20px;
@@ -39,7 +40,7 @@
         line-height: 1.5;
         box-sizing: border-box;
         @media(max-width: $tablet) {
-            height: calc(100vh - 146px);
+            height: calc(100vh - 200px);
             padding: 10px;
         }
         @media(max-width: $phone) {

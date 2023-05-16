@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Context } from '../../App';
 
 function Form({ className }) {  
-  const { activeItem, setActiveItem, list, setList, btn, setEdit } = React.useContext(Context);
+  const { activeItem, setActiveItem, list, setList, btn, setEdit, setItemHandler } = React.useContext(Context);
 
   
   //functions
@@ -15,6 +15,7 @@ function Form({ className }) {
     const hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
     const minutes = date.getMinutes();
     const am_pm = date.getHours() > 12 ? 'PM' : 'AM';
+    const lastChange = Date.now();
     
     return {
       year,
@@ -22,14 +23,18 @@ function Form({ className }) {
       day,
       hours,
       minutes,
-      am_pm
+      am_pm,
+      lastChange
     }
   }
+
   const onChangeTitle = (event) => {
-    setActiveItem({...activeItem, title: event.target.value, date: createDate()})     
+    setActiveItem({...activeItem, title: event.target.value, date: createDate()});
+    setItemHandler(activeItem, event.target.value, createDate(), false)  
   }
   const onChangeText = (event) => {
-    setActiveItem({...activeItem, text: event.target.value, date: createDate()})    
+    setActiveItem({...activeItem, text: event.target.value, date: createDate()})  
+    setItemHandler(activeItem, false, createDate(), event.target.value)  
   }
   const toUpdateList = (arr, item) => {
     const newList = arr.map(obj => {
@@ -65,7 +70,7 @@ function Form({ className }) {
 
   return (
     <div className={classNames('form', className)} ref={formRef}>
-        <div className='form__date'>{`${['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][date.month - 1]} ${date.day}, ${date.year} at ${date.hours < 10 ? (`0${date.hours}`) : date.hours}:${date.minutes < 10 ? (`0${date.minutes}`): date.minutes} ${date.am_pm}`}</div>
+        <div className='form__date'>{`${['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][date.month - 1]} ${date.day}, ${date.year} at ${date.hours < 10 ? (`0${date.hours}`) : date.hours}:${date.minutes < 10 ? ('0' + date.minutes): date.minutes} ${date.am_pm}`}</div>
         <input 
           className='form__title'
           type="text" 

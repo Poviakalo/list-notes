@@ -4,6 +4,9 @@
 
     &::-webkit-scrollbar {
         width: 10px;
+        @media(max-width: $phone) {
+            width: 0;
+        }
     }
     &::-webkit-scrollbar-track {
         background-color: #fff;

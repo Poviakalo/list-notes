@@ -19,9 +19,8 @@ function ListItem({title, activeItem, date, text, selectItem, item}) {
         className={classNames( {"listItem": true, 'listItem-active': activeItem.id === item.id })} 
         onClick={() => chooseItem(item)}
       >
-        { Object.keys(date).length === 0
-          ? null
-            : <>
+        { Object.keys(date).length > 1
+          ? <>
                 <h2 className='listItem__title'>{title.length > 25 ? `${itemTitle} ...` : title}</h2>
                 <div className="listItem__content">
                   <span className='listItem__date'>{          
@@ -32,7 +31,8 @@ function ListItem({title, activeItem, date, text, selectItem, item}) {
                   <p className='listItem__text'>{`${itemText} ...`}</p>
                 </div>
                 
-              </>        
+              </>
+              : null     
         }
       </li>
     </>

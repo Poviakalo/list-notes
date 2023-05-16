@@ -14,9 +14,9 @@ function Workspace() {
           Object.keys(activeItem).length === 0 ? null : (
           edit 
           ? <Form />
-          : (Object.keys(date).length === 0 || date === undefined 
-            ? null 
-            : <>
+          : (Object.keys(date).length > 1
+          //  || date === undefined 
+            ? <>
                 <div className='workspace__date'>
                   {`
                   ${['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][date.month -1]}
@@ -28,7 +28,9 @@ function Workspace() {
                   }</div>
                 <h1 className='workspace__title'>{activeItem.title}</h1>
                 <p className='workspace__text'>{activeItem.text}</p>
-              </>)
+              </>
+              : null
+            )
           )
         }        
       </div>

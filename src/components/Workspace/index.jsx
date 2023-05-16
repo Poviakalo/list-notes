@@ -15,7 +15,6 @@ function Workspace() {
           edit 
           ? <Form />
           : (Object.keys(date).length > 1
-          //  || date === undefined 
             ? <>
                 <div className='workspace__date'>
                   {`

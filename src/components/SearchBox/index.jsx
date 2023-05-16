@@ -35,8 +35,7 @@ function SearchBox() {
             className='searchBox__icon input__clear' 
             onClick={onClickClear}
           />
-        }
-        
+        }        
     </div>
   )
 }

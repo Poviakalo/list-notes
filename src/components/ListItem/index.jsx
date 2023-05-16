@@ -8,7 +8,7 @@ function ListItem({title, activeItem, date, text, selectItem, item}) {
   const itemText  = text.slice(0, 14);
   const itemTitle  = title.slice(0, 25);
   
-  const chooseItem = ( obj) => {
+  const chooseItem = (obj) => {
     selectItem(obj);
     setEdit(false);
     setChecked(true);
@@ -35,8 +35,7 @@ function ListItem({title, activeItem, date, text, selectItem, item}) {
               : null     
         }
       </li>
-    </>
-    
+    </>    
   )
 }
 
